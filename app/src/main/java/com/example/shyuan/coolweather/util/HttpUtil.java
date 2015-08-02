@@ -1,6 +1,7 @@
 package com.example.shyuan.coolweather.util;
 
 import android.net.http.HttpResponseCache;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -33,11 +34,13 @@ public class HttpUtil {
                     }
                     if(listener != null){
                         listener.onFinish(response.toString());
+                        Log.v("tag",response.toString());
                     }
                 } catch (Exception e) {
                     //e.printStackTrace();
                     if(listener == null){
                         listener.onError(e);
+                        Log.v("e","error");
                     }
                 }finally {
                     if(connection != null){
