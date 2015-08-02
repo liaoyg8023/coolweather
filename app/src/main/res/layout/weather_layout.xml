@@ -8,12 +8,12 @@
 
         <Button
             android:id="@+id/switch_city"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:text="切换"
-            android:background="#fff" />
+
+            android:background="@drawable/home" />
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,13 +24,13 @@
             />
         <Button
             android:id="@+id/refresh_weather"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="刷新"
-            android:background="#fff" />
+
+            android:background="@drawable/refresh" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -56,6 +56,7 @@
             <TextView android:id="@+id/current_date"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:textColor="#fff"
                 android:textSize="18sp"
