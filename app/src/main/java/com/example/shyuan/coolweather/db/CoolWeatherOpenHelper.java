@@ -11,19 +11,19 @@ public class CoolWeatherOpenHelper  extends SQLiteOpenHelper{
     /*
     * Province表建表语句
     * */
-    public static final  String CREATE_PROVINCE = "CREATE table Province ("
-            +"id integer primary key autoincrement"
-            +"province_name text"
+    public static final  String CREATE_PROVINCE = "Create table Province ("
+            +"id integer primary key autoincrement,"
+            +"province_name text,"
             +"province_code text)";
 
     /*
     * City表建表语句
     * */
     public static final String CREATE_CITY = "Create table City ("
-            +"id integer primary key autoincrement"
-            +"city_name text"
-            +"city_code text"
-            +"province_id integer";
+            +"id integer primary key autoincrement,"
+            +"city_name text,"
+            +"city_code text,"
+            +"province_id integer)";
 
     /**
      * County表建表语句

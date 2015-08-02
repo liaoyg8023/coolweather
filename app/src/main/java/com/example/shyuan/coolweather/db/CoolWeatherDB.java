@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.shyuan.coolweather.model.City;
-import com.example.shyuan.coolweather.model.Country;
+import com.example.shyuan.coolweather.model.County;
 import com.example.shyuan.coolweather.model.Province;
 
 import java.util.ArrayList;
@@ -118,29 +118,29 @@ public class CoolWeatherDB {
     }
 
     /**
-     * 将Country存储到数据库
+     * 将County存储到数据库
      */
 
-    public void saveCountry(Country country){
-        if(country !=null){
+    public void saveCounty(County county){
+        if(county !=null){
             ContentValues values = new ContentValues();
-            values.put("country_name", country.getCountyName());
-            values.put("country_code", country.getCountyCode());
-            values.put("city_id", country.getCityId());
-            db.insert("Country", null, values);
+            values.put("county_name", county.getCountyName());
+            values.put("county_code", county.getCountyCode());
+            values.put("city_id", county.getCityId());
+            db.insert("County", null, values);
         }
     }
 
     /**
      * 从数据库读取某城市下所有的县信息。
      */
-    public List<Country> loadCounties(int cityId) {
-        List<Country> list = new ArrayList<Country>();
+    public List<County> loadCounties(int cityId) {
+        List<County> list = new ArrayList<County>();
         Cursor cursor = db.query("County", null, "city_id = ?",
                 new String[] { String.valueOf(cityId) }, null, null, null);
         if (cursor.moveToFirst()) {
             do {
-                Country county = new Country();
+                County county = new County();
                 county.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 county.setCountyName(cursor.getString(cursor
                         .getColumnIndex("county_name")));
